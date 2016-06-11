@@ -1,5 +1,5 @@
 FROM node:0.10.45
-MAINTAINER "Mike Pham (support@nativecode.com)"
+MAINTAINER "support@nativecode.com"
 
 # Environment variables.
 ENV SINOPIA_PREFIX https://localhost
@@ -13,8 +13,8 @@ RUN ln -s /opt/sinopia/bin/sinopia /usr/local/bin/sinopia
 # App contents.
 WORKDIR /opt/sinopia/conf.d
 ADD docker-entrypoint.sh /docker-entrypoint.sh
-ADD templates/config.yaml config.yaml
-ADD templates/.sinopia-db.json .sinopia-db.json
+ADD conf.d/config.yaml config.yaml
+ADD conf.d/.sinopia-db.json .sinopia-db.json
 
 # Expose ports and volumes.
 EXPOSE 4873

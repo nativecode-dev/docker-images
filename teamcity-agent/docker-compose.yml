@@ -1,8 +1,8 @@
-test-agent:
-  build: .
-  container_name: test-agent
+teamcity-agent:
+  build: ./image
+  container_name: "${TEAMCITY_AGENT_NAME}"
   environment:
-    - TEAMCITY_AGENT_NAME=test-agent
-    - TEAMCITY_SERVER_URL='https://localhost'
+    - "TEAMCITY_AGENT_NAME=${TEAMCITY_AGENT_NAME}"
+    - "TEAMCITY_SERVER_URL=${TEAMCITY_SERVER_URL}"
   volumes:
-    - /tmp/test-services:/data
+    - "${TEAMCITY_AGENT_DIR}:/data"

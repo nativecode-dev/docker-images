@@ -5,7 +5,7 @@
   },
   "description": "",
   "homepage": "https://github.com/nativecode-dev/docker-images",
-  "license": "ISC",
+  "license": "MIT",
   "name": "docker-images",
   "repository": {
     "type": "git",

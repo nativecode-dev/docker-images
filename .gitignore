@@ -1,0 +1,6 @@
+# File patterns.
+*.log
+
+# Folder patterns.
+logs/
+node_modules/
