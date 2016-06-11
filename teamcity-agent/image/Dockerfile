@@ -29,6 +29,7 @@ RUN set -x \
       cgroupfs-mount \
       curl \
       dnsutils \
+      dmsetup \
       git-core \
       iputils-ping \
       libltdl7 \

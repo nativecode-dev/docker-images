@@ -35,7 +35,5 @@ if [ ! -d "$TEAMCITY_AGENT_PATH/bin" ]; then
     fi
 fi
 
-echo "Starting buildagent..."
 chown -R teamcity:teamcity $TEAMCITY_AGENT_PATH
-
 wrapdocker gosu teamcity $TEAMCITY_AGENT_PATH/bin/agent.sh run
