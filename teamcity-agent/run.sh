@@ -10,8 +10,12 @@ export TEAMCITY_AGENT_DIR=/tmp/test-services
 export TEAMCITY_AGENT_NAME=test-agent
 export TEAMCITY_SERVER_URL="http://localhost"
 
-if [ $1 -eq "run" ]; then
-    docker-compose up
-else
-    docker-compose build
-fi
+case $1 in
+    "run")
+        docker-compose run
+        exit $?
+        ;;
+    *)
+        docker=compose build
+        ;;
+esac
