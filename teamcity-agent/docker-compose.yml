@@ -4,6 +4,7 @@ teamcity-agent:
   environment:
     - "TEAMCITY_AGENT_NAME=${TEAMCITY_AGENT_NAME}"
     - "TEAMCITY_SERVER_URL=${TEAMCITY_SERVER_URL}"
+  privileged: true
   restart: always
   volumes:
     - "${TEAMCITY_AGENT_DIR}:/data"
