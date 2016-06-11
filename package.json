@@ -1,0 +1,15 @@
+{
+  "author": "NativeCode Development <support@nativecode.com> (https://www.nativecode.com)",
+  "bugs": {
+    "url": "https://github.com/nativecode-dev/docker-images/issues"
+  },
+  "description": "",
+  "homepage": "https://github.com/nativecode-dev/docker-images",
+  "license": "ISC",
+  "name": "docker-images",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nativecode-dev/docker-images.git"
+  },
+  "version": "1.0.0"
+}

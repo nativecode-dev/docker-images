@@ -1,0 +1,45 @@
+storage: /data/sinopia/cache
+
+web:
+  enable: true
+  title: Sinopia
+
+auth:
+  htpasswd:
+    file: /data/sinopia/htpasswd
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+    timeout: 30s
+    maxage: 2m
+    max_fails: 5
+    fail_timeout: 5m
+
+packages:
+  'local-*':
+    allow_access: admin
+    allow_publish: admin
+    storage: 'local_storage'
+
+  '@*/*':
+    allow_access: $authenticated
+    allow_publish: $authenticated
+
+  '*':
+    allow_access: $authenticated
+    allow_publish: $authenticated
+    proxy: npmjs
+
+
+#####################################################################
+# Advanced settings
+#####################################################################
+
+listen: 0.0.0.0:4873
+max_body_size: 256mb
+url_prefix: {{PREFIX}}
+
+logs:
+  - {type: stdout, format: pretty, level: http}
+  - {type: file, path: /data/sinopia/logs/sinopia.log, level: info}

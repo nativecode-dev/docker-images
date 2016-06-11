@@ -1,0 +1,8 @@
+test-agent:
+  build: .
+  container_name: test-agent
+  environment:
+    - TEAMCITY_AGENT_NAME=test-agent
+    - TEAMCITY_SERVER_URL='https://localhost'
+  volumes:
+    - /tmp/test-services:/data

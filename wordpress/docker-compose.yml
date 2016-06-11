@@ -1,0 +1,30 @@
+proxy:
+  build: ../proxy
+  container_name: proxy
+  ports:
+    - '80:80'
+    - '443:443'
+  volumes: 
+    - /etc/infrastructure/certs:/etc/nginx/certs
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+
+db:
+  container_name: db
+  environment:
+    MYSQL_ROOT_PASSWORD: alpha123
+  image: mariadb:latest
+
+web:
+  build: .
+  container_name: web
+  environment:
+    VIRTUAL_HOST: alpha.build.nativecode.com
+    WORDPRESS_DB_CREATOR_USER: root
+    WORDPRESS_DB_CREATOR_PASSWORD: alpha123
+    WORDPRESS_DB_HOST: db:3306
+    WORDPRESS_DB_NAME: wordpress
+    WORDPRESS_DB_PASSWORD: password
+    WORDPRESS_DB_USER: wordpress
+    WORDPRESS_TABLE_PREFIX: wordpress_
+  links:
+    - db
