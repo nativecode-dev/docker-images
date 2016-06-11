@@ -13,7 +13,7 @@ MAINTAINER support@nativecode.com
 ENV GOSU_VERSION                  1.7
 ENV NODE_NPM_VERSION              3.5.2
 ENV NODE_VERSION                  4.4.4
-ENV TEAMCITY_SERVER_PATH          http://localhost
+ENV TEAMCITY_SERVER_URL           http://localhost
 ENV TERM                          dumb
 WORKDIR /data
 
@@ -106,6 +106,7 @@ RUN set -x \
 # Add files to image and set the entry point, volumes, and posts.
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD wrapdocker /usr/local/bin/wrapdocker
+RUN chmod +x /docker-entrypoint.sh && chmod +x /usr/local/bin/wrapdocker
 ENTRYPOINT /docker-entrypoint.sh
 VOLUME /var/lib/docker
 VOLUME /data
