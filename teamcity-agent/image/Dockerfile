@@ -109,6 +109,7 @@ ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /docker-entrypoint.sh && chmod +x /usr/local/bin/wrapdocker
 ENTRYPOINT /docker-entrypoint.sh
+USER root
 VOLUME /var/lib/docker
 VOLUME /data
 EXPOSE 9090
