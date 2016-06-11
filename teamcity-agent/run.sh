@@ -16,6 +16,6 @@ case $1 in
         exit $?
         ;;
     *)
-        docker=compose build
+        docker-=compose build
         ;;
 esac
