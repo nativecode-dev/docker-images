@@ -12,7 +12,7 @@ MAINTAINER support@nativecode.com
 ##
 ENV GOSU_VERSION                  1.7
 ENV NODE_NPM_VERSION              3.5.2
-ENV NODE_VERSION                  4.4.4
+ENV NODE_VERSION                  6.2.1
 ENV TEAMCITY_SERVER_URL           http://localhost
 ENV TERM                          dumb
 WORKDIR /data
