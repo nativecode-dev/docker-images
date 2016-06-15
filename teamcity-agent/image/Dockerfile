@@ -108,6 +108,7 @@ RUN set -x \
 ADD docker-entrypoint.sh /docker-entrypoint.sh
 ADD wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /docker-entrypoint.sh && chmod +x /usr/local/bin/wrapdocker
+USER root
 ENTRYPOINT /docker-entrypoint.sh
 VOLUME /var/lib/docker
 VOLUME /data
